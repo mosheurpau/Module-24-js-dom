@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* #second-title {
+            background-color: rgba(210, 105, 30, 0.503);
+        } */
+        /* .blog {
+            border: 2px solid orange;
+            margin: 5px;
+            padding: 5px;
+            border-radius: 10px;
+        } */
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Welcom to my blog website</h1>
+    </header>
+    <main>
+        <section id="blogId" class="blogs">
+            <header>
+                <h2>Blogs list</h2>
+                <ul id="blog-list">
+                    <li>Blog-1</li>
+                    <li>Blog-2</li>
+                    <li>Blog-3</li>
+                    <li>Blog-4</li>
+                </ul>
+            </header>
+            <article class="blog">
+                <h2>My awosome Blog-1</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam optio iste deserunt fuga beatae
+                    voluptatibus doloremque. Voluptates laboriosam dolor repellendus enim nobis aliquid commodi maiores
+                    debitis officia dicta? In, asperiores.</p>
+            </article>
+            <article class="blog">
+                <h2 id="second-title">My awosome Blog-2</h2>
+                <p>Dicta iste quae repellendus labore odit neque, suscipit voluptates at nostrum sapiente eaque velit
+                    alias porro corporis non totam minus ea dolore molestias, iure voluptatibus modi minima. Alias,
+                    labore animi.</p>
+            </article>
+            <article class="blog">
+                <h2 id="third-title">My awosome Blog-3</h2>
+                <p>Quod delectus modi dolorem aliquid hic. Hic, dolore consequuntur. Temporibus cum unde fugiat eveniet.
+                    Nesciunt sapiente nulla, expedita fugiat dolore sequi, officiis quo nam voluptatibus iure tempore
+                    voluptatum rem ex?</p>
+            </article>
+            <article class="blog">
+                <h2 id="forth-title">My awosome Blog-4</h2>
+                <p>Quod delectus modi dolorem aliquid hic. Hic, dolore consequuntur. Temporibus cum unde fugiat eveniet.
+                    Nesciunt sapiente nulla, expedita fugiat dolore sequi, officiis quo nam voluptatibus iure tempore
+                    voluptatum rem ex?</p>
+            </article>
+        </section>
+    </main>
+    <script>
+        const student = { name: 'Mosheur', age: 24, height: 60 };
+        // console.log(document.body);
+        // const blogTitles = ['h2', 'h2']
+        const blogTitles = document.getElementsByTagName('h2');
+        // console.log(blogTitles);
+        for (const h2 of blogTitles) {
+            // console.log(h2.innerText);
+        }
+
+        const blogDetails = document.getElementsByTagName('p');
+        for (const p of blogDetails) {
+            // console.log(p.innerText);
+        }
+
+        const secondTitle = document.getElementById('second-title');
+        secondTitle.style.textAlign = 'center';
+
+        // getElementById
+        const third = document.getElementById('third-title');
+        third.innerText = 'Title updated by JS';
+        third.style.backgroundColor = 'pink';
+        third.style.padding = '10px';
+        third.style.marginLeft = '20px';
+
+        // create and add Element by using js 
+        const li = document.createElement('li');
+        li.innerText = 'Blog-5';
+        // where to add 
+        const ul = document.getElementById('blog-list');
+        // append new element 
+        ul.appendChild(li);
+
+        // add article
+        const article = document.createElement('article');
+        article.classList.add('blog');
+        /* const h2 = document.createElement('h2');
+        h2.innerText = 'This is new h2';
+
+        const p = document.createElement('p');
+        p.innerText = 'Quod delectus modi dolorem aliquid hic. Hic, dolore consequuntur. Temporibus cum unde fugiat eveniet. Nesciunt sapiente nulla, expedita fugiat dolore sequi, officiis quo nam voluptatibus iure tempore '; 
+
+        article.appendChild(h2);
+        article.appendChild(p); */
+
+        article.innerHTML = `
+        <h2> This is new h2 </h2>
+        <p> Quod delectus modi dolorem aliquid hic. Hic, dolore consequuntur. Temporibus cum unde fugiat eveniet. Nesciunt sapiente nulla, expedita fugiat dolore sequi, officiis quo nam voluptatibus iure tempore </p>
+        `;
+
+
+        // parent of article
+        const blogSection = document.getElementById('blogId');
+        blogSection.appendChild(article);
+
+
+        // getElementsByClassName
+        const blogs = document.getElementsByClassName('blog');
+        for (const blog of blogs) {
+            blog.style.border = '2px solid orange';
+            blog.style.margin = '5px';
+            blog.style.padding = '5px';
+            blog.style.borderRadius = '10px';
+        }
+
+    </script>
+</body>
+
+</html>
